@@ -1,0 +1,155 @@
+.post, #new_post {
+    border: 1px solid #cfcfcf;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#edited_content {
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+p {
+    margin:0;
+}
+
+.creation_date {
+    color: gray;
+}
+
+.post_user {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post_user:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+#pagination {
+    display: flex;
+}
+
+.active, .active:hover {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #047bfe;
+    border: 1px solid #047bfe;
+}
+
+.edit_post, .save_post {
+    cursor: pointer;
+}
+
+.body a:hover {
+    text-decoration: underline;
+}
+
+.like_post, .unlike_post {
+    cursor: pointer;
+}
+
+.likes {
+    display: flex;
+}
+
+.like_post, .unlike_post {
+    margin-right: 5px;
+}
+
+.like_post {
+    color: gray;
+}
+
+.like_post:hover {
+    color: #ff0a04;
+    transition: 0.4s;
+}
+
+.unlike_post {
+    color: #ff0a04;
+}
+
+.like_count {
+    color: grey;
+}
+
+.header {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#new_post_content {
+    width: 100%;
+    height: 60px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+
+#new_post_content {
+    outline: none;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+}
+
+#pagination {
+    margin: 15px;
+}
+
+#pages {
+    display:flex;
+}
+
+#previous_page_button {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#next_page_button {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.disabled-button {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #747d83;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+#follow {
+    display: flex;
+    margin-left: 15px;
+}
+
+#profile_following, #profile_followers {
+    display: flex;
+    margin-right: 10px;
+}
+
+.bold {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#profile_header, .following_header {
+    margin: 10px;
+}
+
+#profile_follow_btn {
+    margin: 10px;
+    margin-left: 15px;
+}

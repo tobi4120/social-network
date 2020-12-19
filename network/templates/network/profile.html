@@ -1,0 +1,37 @@
+{% extends "network/layout.html" %}
+
+
+{% block body %}
+    <h2 id='profile_header'>{{ profile }}</h2>
+    <div id='follow'>
+        <div id='profile_followers'><p class='bold'>{{ followers }}</p> followers</div>
+        <div id='profile_following'><p class='bold'>{{ following }}</p> following</div>
+    </div>
+
+    {% if user.is_authenticated and profile != request.user.username %}
+        <form action = "/follow_unfollow" method="POST">
+            {% csrf_token %}
+            <input name="type" type="hidden" value={{ follow_button }}>
+            <input name="profile" type="hidden" value={{ profile }}>
+            <input id='profile_follow_btn' class='btn btn-primary' type="submit" value="{{ follow_button }}">
+        </form>
+    {% endif %}
+
+    <div id="all_posts"></div>
+    <div id="pagination">
+        <div id="previous_button"></div>
+        <div id="pages"></div>
+        <div id="next_button"></div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% load static %}
+    <script src="{% static 'network/profile.js' %}"></script>
+
+    <script type="text/javascript"> 
+        var profile_name = "{{profile}}";
+        var current_user = "{{ current_user }}";
+        var csrf_token = "{{ csrf_token }}";
+    </script>
+{% endblock %}

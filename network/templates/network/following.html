@@ -1,0 +1,23 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <h2 class="following_header">Following</h2>
+    <div id="all_posts"></div>
+    <div id="pagination">
+        <div id="previous_button"></div>
+        <div id="pages"></div>
+        <div id="next_button"></div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% load static %}
+    <script src="{% static 'network/following.js' %}"></script>
+
+    <script type="text/javascript"> 
+        var following_list = "{{ following_list|safe }}";
+        var current_user = "{{ current_user }}";
+        var csrf_token = "{{ csrf_token }}";
+        var profile_name = "{{profile}}";
+    </script>
+{% endblock %}

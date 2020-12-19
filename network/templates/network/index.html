@@ -1,0 +1,42 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="alert alert-danger" role="alert">
+    Post content cannot be blank!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+    <div>
+        <h2 class='header'>All Posts</h2>
+
+        {% if user.is_authenticated %}
+        <div id="new_post">
+            <h4>New Post</h4>
+            <form>
+                <textarea id="new_post_content" required></textarea><br>
+                <input id="csrf_token" type="hidden" value= "{{ csrf_token }}">
+                <input id="submit_new_post" class="btn btn-primary" type="submit" value="Post">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    <div id="all_posts"></div>
+    <div id="pagination">
+        <div id="previous_button"></div>
+        <div id="pages"></div>
+        <div id="next_button"></div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    {% load static %}
+    <script src="{% static 'network/all_&_new_posts.js' %}"></script>
+
+    <script type="text/javascript"> 
+        var current_user = "{{ current_user }}";
+    </script>
+{% endblock %}
