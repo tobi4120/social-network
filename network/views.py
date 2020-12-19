@@ -8,8 +8,6 @@ from .models import *
 from rest_framework import viewsets, authentication, permissions
 from .serializers import *
 
-#testing
-
 # Render the models to JSON format
 class PostViewSet(viewsets.ModelViewSet):
     queryset = post.objects.all().order_by('-creation_date')
