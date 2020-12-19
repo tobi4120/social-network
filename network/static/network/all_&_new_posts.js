@@ -116,7 +116,7 @@ function all_posts(current_page) {
             .then(likes => {
 
                 likes.forEach(function(like) {
-                    if (like.account == current_user && like.post == `http://127.0.0.1:8000/apiposts/${post.id}/` ) {
+                    if (like.account == current_user && like.post == post.id ) {
                         current_user_liked_post = true
                     }
                 });
@@ -293,7 +293,7 @@ document.addEventListener('click', function(event) {
         fetch('/apilikes/', {
             method: 'POST',
             body: JSON.stringify({
-                post: `http://127.0.0.1:8000/apiposts/${post_id}/`
+                post: post_id
             }),
             headers: { "X-CSRFToken": csrftoken, "Content-Type": "application/JSON" }
         })
@@ -337,7 +337,7 @@ document.addEventListener('click', function(event) {
         .then(likes => {
             
             likes.forEach(function(like) { 
-                if (like.account == current_user && like.post == `http://127.0.0.1:8000/apiposts/${post_id}/`) {
+                if (like.account == current_user && like.post == post_id) {
                     fetch(`/apilikes/${like.id}`, {
                         method: 'DELETE',
                         headers: { "X-CSRFToken": csrftoken, "Content-Type": "application/JSON" }
